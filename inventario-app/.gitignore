@@ -1,0 +1,15 @@
+/node_modules
+/dist
+/.angular
+/coverage
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db

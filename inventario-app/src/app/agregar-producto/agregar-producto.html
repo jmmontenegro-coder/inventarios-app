@@ -1,13 +1,14 @@
 <div class="container">
   <div class="container text-center" style="margin: 30px;">
     <h3>Agregar Producto</h3>
-    <form>
+    <form (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="descripcion" class="form-label">Descripcion del producto</label>
         <input
           type="text"
           class="form-control"
-          id="descripcion"
+          id="descripcion" name="descripcion" required
+          [(ngModel)]="producto.descripcion"
         />
       </div>
       <div class="mb-3">
@@ -15,7 +16,8 @@
         <input
           type="number" step="any"
           class="form-control"
-          id="precio"
+          id="precio" name="precio" required
+          [(ngModel)]="producto.precio"
         />
       </div>
 
@@ -24,7 +26,8 @@
         <input
           type="number"
           class="form-control"
-          id="existencia"
+          id="existencia" name="existencia" required
+          [(ngModel)]="producto.existencia"
         />
       </div>
 

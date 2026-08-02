@@ -1,7 +1,7 @@
 import { Component, Inject, inject } from '@angular/core';
 import { Producto } from '../model/producto.Model';
 import { ProductoServicio } from '../servicios/producto.service';
-import { error } from 'console';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-producto-lista',
@@ -12,6 +12,7 @@ export class ProductoLista {
   productos!: Producto[];
 
   private productoServicio = inject(ProductoServicio);
+  private enrutador = inject(Router);
 
   ngOnInit(){
     //Cargamos los productos
@@ -26,5 +27,9 @@ export class ProductoLista {
       },
       error: (error) => console.error("Errror al obtener los productos", error)
     });
+  }
+
+  editarProducto(id: number){
+    this.enrutador.navigate([`editar-producto`, id]);
   }
 }
